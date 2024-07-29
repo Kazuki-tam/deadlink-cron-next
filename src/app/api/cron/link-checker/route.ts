@@ -10,6 +10,7 @@ export const revalidate = 0;
 export const maxDuration = 60;
 
 export async function GET(request: NextRequest) {
+  // Cron Job実行許可の検証
   const authHeader = request.headers.get("authorization");
   if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
     return new Response("Unauthorized", {
