@@ -1,5 +1,7 @@
 export const isValidUrl = (url: string): boolean => {
-  const BASE_URL = process.env.VERCEL_URL || "http://localhost:3000";
+  const BASE_URL = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
 
   try {
     // URLを解析
