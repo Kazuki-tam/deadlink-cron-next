@@ -1,5 +1,10 @@
 import { isValidUrl } from "@/app/api/cron/link-checker/isValidUrl";
 
+/**
+ * コンテンツ内のリンクを抽出する
+ * @param content - 抽出対象のコンテンツ
+ * @returns 抽出されたリンクのリスト
+ */
 export const extractLinks = (content: string): string[] => {
   const BASE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`

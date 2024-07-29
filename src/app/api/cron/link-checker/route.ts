@@ -9,6 +9,11 @@ export const revalidate = 0;
 // https://vercel.com/docs/functions/runtimes#max-duration
 export const maxDuration = 60;
 
+/**
+ * リンク切れをチェックする
+ * @param request - リクエスト
+ * @returns レスポンス
+ */
 export async function GET(request: NextRequest) {
   // Cron Job実行許可の検証
   const authHeader = request.headers.get("authorization");

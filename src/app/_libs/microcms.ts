@@ -20,6 +20,10 @@ export type BlogContent = {
   } | null;
 };
 
+/**
+ * MicroCMSから全てのブログを取得します。
+ * @returns ブログのリスト
+ */
 export const fetchAllBlogs = async function (): Promise<BlogContent[]> {
   const response = await client.getAllContents({
     endpoint: "blogs",

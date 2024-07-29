@@ -2,7 +2,11 @@ import { checkLink } from "@/app/api/cron/link-checker/checkLink";
 import { extractLinks } from "@/app/api/cron/link-checker/extractLinks";
 import type { BlogContent } from "@/app/_libs/microcms";
 
-// コンテンツ内のリンクをチェックする
+/**
+ * コンテンツ内のリンクをチェックする
+ * @param content - チェック対象のコンテンツ
+ * @returns リンク切れのリスト
+ */
 export const checkContentLinks = async (
   content: BlogContent
 ): Promise<{ id: string; title: string; link: string }[]> => {

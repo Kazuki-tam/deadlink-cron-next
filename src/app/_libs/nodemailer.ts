@@ -1,11 +1,14 @@
 import nodemailer from "nodemailer";
 
-// Gmail configuration
+// Gmailの認証情報を環境変数から取得
 const GMAIL_USER = process.env.GMAIL_USER;
 const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL;
 
-// Send email
+/**
+ * メール通知を送信する
+ * @param brokenLinks - リンク切れのリスト
+ */
 export const sendEmailNotification = async (
   brokenLinks: { id: string; title: string; link: string }[]
 ): Promise<void> => {
