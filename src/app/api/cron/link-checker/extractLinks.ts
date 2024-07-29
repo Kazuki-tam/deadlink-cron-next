@@ -1,7 +1,8 @@
 import { isValidUrl } from "@/app/api/cron/link-checker/isValidUrl";
 
 export const extractLinks = (content: string): string[] => {
-  const BASE_URL = process.env.VERCEL_URL || "http://localhost:3000";
+  const BASE_URL =
+    `https://${process.env.VERCEL_URL}` || "http://localhost:3000";
   console.log(`BASE_URL: ${BASE_URL}`);
   const linkPatterns = [
     /<a\s+(?:[^>]*?\s+)?href="([^"]*)"[^>]*>/gi,
