@@ -7,7 +7,6 @@ export const checkContentLinks = async (
   content: BlogContent
 ): Promise<{ id: string; title: string; link: string }[]> => {
   // コンテンツ内のリンクを抽出
-  console.log(`Checking links in ${content.title}`);
   const links = extractLinks(content.content);
   // リンク切れのリスト
   const brokenLinks: { id: string; title: string; link: string }[] = [];
