@@ -3,8 +3,8 @@ import { sendEmailNotification } from "@/app/_libs/nodemailer";
 import { checkContentLinks } from "@/app/api/cron/link-checker/checkContentLinks";
 import { NextResponse, NextRequest } from "next/server";
 
-// キャッシュを無効化
-export const revalidate = 0;
+// キャッシュの再検証間隔
+export const revalidate = 3600;
 // 最大実行時間
 // https://vercel.com/docs/functions/runtimes#max-duration
 export const maxDuration = 60;
